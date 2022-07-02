@@ -1,0 +1,48 @@
+.iconDownload{
+    width: 25px;
+    height: 25px;
+}
+
+.iconMenu{
+    width: 20px;
+    height: 20px;
+    color : #DC143C;
+}
+.order{
+    z-index: -1;
+}
+.pro{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+}
+
+ion-tab-bar, ion-tab-button{
+    background-color: #4E80FF;
+}
+ion-icon{
+     color: #ffffff;
+   }
+ion-label{
+    color: #ffffff;
+  }
+  ion-header ion-toolbar:first-of-type {
+    padding-top: 0px;
+    border-bottom: 4px solid #4E80FF;
+}
+
+ion-tab-button {
+    --color-selected: red;
+   &::before {
+    background-color:  red!important;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    width: 20px;
+    height: 2px;
+  }
+  .tab-selected::before {
+    background-color: red;
+  }
+}

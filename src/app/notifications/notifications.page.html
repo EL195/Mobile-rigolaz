@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.notifications' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ 'tab1.son' | translate }}</ion-label>
+      <ion-checkbox slot="start"  color="primary" [checked]="sone" [(ngModel)]="sonnerie" (ionChange)="myChanges($event)"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{ 'tab1.vibreur' | translate }}</ion-label>
+      <ion-checkbox slot="start"  color="primary" [checked]="viber" [(ngModel)]="vibreur" (ionChange)="myChange($event)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.contactus' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <p text-justify>
+      {{ 'tab1.questio' | translate }}
+    </p>
+  </ion-item>
+    <h4 class="ion-text-center"><strong>{{ 'tab1.contactus' | translate }}</strong></h4>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <form [formGroup]="complaintForm" (ngSubmit)="newComplaint()">
+            <ion-item>
+              <ion-label position="floating">{{ 'tab1.subject' | translate }}</ion-label>
+              <ion-input formControlName="nomC" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Message</ion-label>
+              <ion-textarea formControlName="messageC"></ion-textarea>
+            </ion-item>
+  
+            <ion-row class="btn-div">
+              <ion-button [disabled]="complaintForm.invalid" type="submit" id="saveBtn" color="primary">
+                {{ 'tab1.send' | translate }} <ion-icon name="send"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

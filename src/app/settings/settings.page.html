@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.settings' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card>
+    <!--  other stuff -->
+    <ion-card-content>
+      <ion-label  *ngIf="connect==false" >{{ 'tab1.lanS' | translate }} </ion-label><br/>
+      <ion-label  *ngIf="connect==true" >{{ 'tab1.lanSs' | translate }} </ion-label><br/>
+      <ion-label  *ngIf="connect==true" >{{ 'tab1.lanSSS' | translate }} : {{lg}} </ion-label>
+      <ion-label  *ngIf="connect==false" >{{ 'tab1.lanSSS' | translate }} :  {{len}} </ion-label>
+      <ion-item lines="none"> <!-- add this block -->
+        <ion-label   >{{ 'tab1.lib' | translate }} </ion-label>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [okText]='"tab1.valider" | translate' [cancelText]='"tab1.cancel" | translate' [placeholder]='"tab1.languageChangePlaceholder" | translate'>
+          <ion-select-option value='fr'>{{ 'tab1.fre' | translate }} </ion-select-option>
+          <ion-select-option value='en'>{{ 'tab1.eng' | translate }} </ion-select-option>
+        </ion-select>
+      </ion-item> <!-- add this block (end) -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

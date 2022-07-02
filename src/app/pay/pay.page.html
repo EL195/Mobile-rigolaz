@@ -1,0 +1,138 @@
+<ion-content  style="--ion-background-color:white;">
+  
+  <ion-segment (ionChange)="segmentChanged($event)" full="true"  assertive>
+    <ion-segment-button value="mine">
+      <ion-label>{{ 'tab1.abonnem' | translate }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tier">
+      <ion-label>{{ 'tab1.autrec' | translate }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+<div *ngIf="event=='mine'">
+  <div id="header">
+    <ion-list *ngIf="connect==true">
+      <ion-item>
+        <ion-label> {{ 'tab1.cpt' | translate }}</ion-label>
+        <ion-select (ionChange)="onChange($event)" [value]="brown" [okText]="texting.valider" [cancelText]="texting.cancel">
+          <ion-select-option *ngFor="let items of principal" [value]="items.cpt">{{items.cpt}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <p *ngIf="connect==false" style="color:black;text-align: center;" >{{ 'tab1.cpt' | translate }}<br/> <span style="color:red!important;text-align: center;">
+      {{ 'tab1.cptsms' | translate }}
+    </span></p>
+    <p *ngIf="connect==true" style="color:black;text-align: center;" >{{comteurelt}} </p>
+  </div>
+
+    <form id="form">
+      <div class="divOnline" style="border-right: 1px solid #000000;padding-right: 10px">
+        <ion-list lines="none">
+        <ion-item class="ion-margin-bottom">
+          <ion-label slot="start"> {{ 'tab1.price' | translate }}</ion-label>
+          <input style="box-shadow: 0 0 5pt 0.5pt #D3D3D3; padding-top: 5px;padding-left: 10px; background:white!important;border:1px solid #000000!important;width: 100%;" slot="end" placeholder="000 XFA" [(ngModel)]="price" type="number" name="price" />
+        </ion-item>
+    
+        <ion-item class="ion-margin-bottom">
+          <ion-label slot="start"> {{ 'tab1.frais' | translate }}</ion-label>
+          <p style="" slot="end">{{price}} XFA</p>
+        </ion-item>
+
+
+        <ion-item class="ion-margin-bottom">
+          <ion-label slot="start"> {{ 'tab1.total' | translate }} :</ion-label>
+          <p style="" slot="end">{{price}} XFA</p>
+        </ion-item>
+    
+        </ion-list>
+      </div>
+        <div class="divOnline" style="padding-left: 15px;padding-top:100px!important">
+          <p>{{ 'tab1.qte' | translate }} <br/><span style="color:#28a528;">0</span>kwh</p></div>
+        <ion-button *ngIf="cool==false" (click)="pay()" expand="block" shape="round">{{ 'tab1.paynow' | translate }}</ion-button>
+     
+      
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+<div *ngIf="event=='tier'">
+  <div id="header">
+    <p style="color:black;text-align: center;" >{{ 'tab1.autrec' | translate }} <br/> {{tiers}} </p>
+  </div>
+  <form id="form">
+    <ion-list lines="none">
+    <ion-item class="ion-margin-bottom">
+      <ion-label slot="start"> {{ 'tab1.numero' | translate }} : </ion-label>
+      <input style="box-shadow: 0 0 5pt 0.5pt #D3D3D3;padding-top: 10px;background:white!important;border:1px solid #72A3F4!important;width: 100%;" slot="end" [(ngModel)]="cpt" value="014_" type="text" name="cpt" />
+    </ion-item>
+
+
+    <div class="divOnline" style="border-right: 1px solid #000000;padding-right: 10px">
+      <ion-item class="ion-margin-bottom">
+        <ion-label slot="start"> {{ 'tab1.price' | translate }}</ion-label>
+        <input style="box-shadow: 0 0 5pt 0.5pt #D3D3D3; padding-top: 5px;padding-left: 10px; background:white!important;border:1px solid #000000!important;width: 100%;" slot="end" placeholder="000 XFA" [(ngModel)]="price" type="number" name="price" />
+      </ion-item>
+
+
+
+      <ion-item class="ion-margin-bottom">
+        <ion-label slot="start"> {{ 'tab1.frais' | translate }}</ion-label>
+        <p style="" slot="end">{{price}} XFA</p>
+      </ion-item>
+
+
+      <ion-item class="ion-margin-bottom">
+        <ion-label slot="start"> {{ 'tab1.total' | translate }} :</ion-label>
+        <p style="" slot="end">{{price}} XFA</p>
+      </ion-item>
+    </div>
+      <div class="divOnline" style="padding-left: 15px;padding-top:100px!important">
+        <p>{{ 'tab1.qte' | translate }} <br/><span style="color:#28a528;">0</span>kwh</p></div>
+     <!--  <ion-button (click)="payt()" expand="block" shape="round">{{ 'tab1.paynow' | translate }}</ion-button> -->
+   </ion-list>
+    
+  </form>
+  
+</div>
+
+
+<div *ngIf="cool==true" class="formulaire">
+  <form >
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          {{ 'tab1.pyt' | translate }} 
+        </ion-label>
+      </ion-list-header>
+      <ion-item class="numberr">
+        <ion-label>{{ 'tab1.methods' | translate }} </ion-label>
+        <ion-select [(ngModel)]="paiement_type"  name="paiement_type" [value]="brown" [okText]="texting.valider" [cancelText]="texting.cancel">
+          <ion-select-option value="1">MTN Mobile Money</ion-select-option>
+          <ion-select-option value="2">Orange Money</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <!-- Number type input -->
+    <ion-label>{{ 'tab1.tel' | translate }} </ion-label>
+    <ion-input name="numero" class="numberr"  [(ngModel)]="numero" max="9" min="9" type="number" value="6"></ion-input>
+    <ion-button (click)="payNow()" expand="block" shape="round">{{ 'tab1.paynow' | translate }}</ion-button>
+  </form>
+</div>
+
+
+ 
+  <div id="headeri">
+    <h1>{{ 'tab1.methods' | translate }}</h1>
+    <img class="imge" src="assets/pay.png" />
+  </div>
+</ion-content>

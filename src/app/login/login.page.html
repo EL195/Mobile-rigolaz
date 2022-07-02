@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons color="primary"  slot="start">
+        <ion-back-button color="primary" icon="chevron-back-outline" defaultHref="/tablinks/pay"> </ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div id="header">
+    <ion-img style="width: 100px; height: 100px;" src="assets/Rigolaz.png"></ion-img>
+    <!-- <img src="assets/logo.png" /> -->
+  </div>
+
+  <form id="form">
+    <ion-item class="ion-margin-bottom">
+        <ion-icon name="person-circle-outline" item-start></ion-icon>
+      <input   [(ngModel)]="pseudo" [placeholder]='"tab1.pseudo" | translate' name="pseudo" type="text"/>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-icon name="lock-closed" item-start></ion-icon>
+      <input [placeholder]='"tab1.password" | translate' [(ngModel)]="password" name="Password"  type="Password"/>
+    </ion-item>
+
+      <ion-checkbox slot="end" ></ion-checkbox>
+      <ion-label>{{ 'tab1.remember' | translate }}</ion-label>
+
+
+    <ion-button (click)="getEmail()" expand="block" >{{ 'tab1.login' | translate }}</ion-button>
+  </form>
+
+  <div padding>
+    <ion-row>
+      <ion-col style="text-align: center;" size="12">
+          <a style="color:#625FEA;text-align: center;" (click)="emailPrompt()" class="other-text">{{ 'tab1.forgot' | translate }}</a> 
+      </ion-col>
+      
+    </ion-row>
+  </div>
+
+
+
+</ion-content>
+<ion-footer class="footing">
+  <span style="color:#809593;">{{ 'tab1.new' | translate }}</span><span style="color:#625FEA;" routerLink="/register">{{ 'tab1.signin' | translate }}</span>
+</ion-footer>

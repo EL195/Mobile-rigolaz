@@ -1,0 +1,18 @@
+#headeri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #010100;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    img {
+      width: 300px;
+      
+    }
+  }

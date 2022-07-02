@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.help' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item routerLink="/faq">
+      <ion-icon  slot="start" name="help-circle-outline"></ion-icon>
+      <ion-label>{{ 'tab1.qr' | translate }}</ion-label>
+    </ion-item>
+    <ion-item routerLink="/contact">
+      <ion-icon  slot="start" name="mail-unread-outline"></ion-icon>
+      <ion-label>{{ 'tab1.contactus' | translate }}</ion-label>
+    </ion-item>
+    <ion-item routerLink="/cgu">
+      <ion-icon  slot="start" name="alert-outline"></ion-icon>
+      <ion-label>{{ 'tab1.cgu' | translate }}</ion-label>
+    </ion-item>
+    <ion-item routerLink="/info">
+      <ion-icon r slot="start" name="information-circle-outline"></ion-icon>
+      <ion-label>{{ 'tab1.infos' | translate }}</ion-label>
+    </ion-item>
+  
+  </ion-list>
+</ion-content>

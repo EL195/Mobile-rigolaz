@@ -1,0 +1,70 @@
+
+  <ion-content fullscreen class="ion-padding" scroll-y="false" style="--ion-background-color:{{color}};">
+    <ion-slides #slides pager="true" [options]="slideOpts" (ionSlideDidChange)="slideChanged()">
+<!-- Slide 1 -->
+      <ion-slide>
+        <div class="slide slide1" >
+          <img class="im"  src="assets/slides/1.png"/>
+          <div class="contente">
+            <h2 style="color:#8BC34A;">{{ 'tab1.well' | translate }}</h2>
+            <h2>{{ 'tab1.titre1' | translate }}</h2>
+            <p>{{ 'tab1.slid1' | translate }}</p>
+            <ion-item lines="none">
+              <ion-badge  slot="start">
+                
+              </ion-badge>
+              <ion-button  (click)="finishAppOnboarding()" style="margin-left: 135px!important;" color="primary">{{ 'tab1.welcomeb' | translate }}</ion-button>
+              <ion-badge slot="end">
+                <ion-icon  (click)="nextSlide(2)" name="arrow-forward-outline"></ion-icon>
+                </ion-badge>
+            </ion-item>
+          </div>
+        </div>
+      </ion-slide>
+
+<!-- Slide 2 -->
+      <ion-slide>
+        <div class="slide slide1" >
+          <img class="im"  src="assets/slides/2.png"/>
+          <div class="contente">
+            <br/>
+            <h2 style="margin-top:-25px;color:#8BC34A;">{{ 'tab1.well' | translate }}</h2>
+            <h2>{{ 'tab1.titre2' | translate }}</h2>
+            <p>{{ 'tab1.slid2' | translate }}</p>
+            <ion-item lines="none">
+              <ion-badge  slot="start">
+                <ion-icon (click)="nextPrev(1)" name="arrow-back-outline"></ion-icon>
+              </ion-badge>
+              <ion-button  (click)="finishAppOnboarding()" class="btno" color="primary">{{ 'tab1.welcomeb' | translate }}</ion-button>
+              <ion-badge slot="end">
+                <ion-icon (click)="nextSlide(3)" name="arrow-forward-outline"></ion-icon>
+                </ion-badge>
+            </ion-item>
+          </div>
+        </div>
+      </ion-slide>
+
+<!-- Slide 3 -->
+      <ion-slide>
+        <div class="slide slide1" >
+          <img class="im"  src="assets/slides/3.png"/>
+          <div class="contente">
+            <h2 style="color:red;">{{ 'tab1.well' | translate }}</h2>
+            <h2>{{ 'tab1.titre3' | translate }}</h2>
+            <p>{{ 'tab1.slid3' | translate }}</p>
+            <ion-item lines="none">
+              <ion-badge  slot="start">
+                <ion-icon (click)="nextPrev(1)" name="arrow-back-outline"></ion-icon>
+              </ion-badge>
+              <ion-button  (click)="finishAppOnboarding()" style="margin-left: 84px!important;" color="primary">{{ 'tab1.welcomeb' | translate }}</ion-button>
+              <ion-badge slot="end">
+               
+                </ion-badge>
+            </ion-item>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+
+  

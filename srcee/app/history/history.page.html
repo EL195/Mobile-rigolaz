@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.history' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+  <div *ngIf="eventi==true">
+    <ion-list *ngFor="let items of principal">
+      <ion-item>
+        <ion-badge color="secondary" slot="end">{{item.price}}</ion-badge>
+        <ion-label>{{item.libelle}}</ion-label>
+        <ion-badge color="secondary" slot="end">{{item.datecreated}}</ion-badge>
+      </ion-item>
+  </ion-list>
+  </div>
+
+  <div *ngIf="eventi==false">
+    <div id="headeri">
+      <h1>{{ 'tab1.nohistoy' | translate }}</h1>
+     
+    </div>
+  </div>
+</ion-content>

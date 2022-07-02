@@ -1,0 +1,20 @@
+<ion-content padding="false">
+  <div id="headeri">
+    <h1 style="color:#3b3b3b">{{ 'tab1.codest' | translate }}</h1>
+   
+  </div>
+  <table id="customers">
+    <tr>
+      <th style="border-right: 1px solid #817e7e;">Functions</th>
+      <th style="border-right: 1px solid #817e7e;">Codes</th>
+      <th>Fonctions</th>
+    </tr>
+    <tr *ngFor="let item of principal">
+      <td style="border-left: 1px solid #ffffff;">{{item.function}}</td>
+      <td style="color:chocolate" >{{item.code}}</td>
+      <td style="border-right: 1px solid #ffffff;"> {{item.fonction}}</td>
+    </tr>
+ 
+   
+  </table>
+

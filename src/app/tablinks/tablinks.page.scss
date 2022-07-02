@@ -1,0 +1,118 @@
+.iconDownload{
+    width: 25px;
+    height: 25px;
+}
+
+.iconMenu{
+    width: 20px;
+    height: 20px;
+    color : #DC143C;
+}
+
+.order{
+    z-index: -1;
+}
+.pro{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: block;
+}
+
+.bgon{
+  background: url('/assets/images/bg.jpg')!important;
+ // background: yellow!important;
+ background-repeat: no-repeat;
+ background-size: 75% 50%;
+}
+
+.ion-color-primary {
+  --background: transparent;
+  --ion-color-base: transparent !important;
+ }
+
+ .ion-color-primary{
+   
+ }
+
+
+ .mod{
+  background: #72A3F4!important;
+ }
+
+/* ion-content {
+  --background: url('../../assets/images/bg.jpg') no-repeat center center fixed cover;
+  --background-size: cover;
+}
+
+ion-item {
+ --background: transparent;
+ --ion-color-base: transparent !important;
+}
+
+
+ion-tabs {
+ --background: url('../../assets/images/bg.jpg') no-repeat center center fixed cover;
+ --background-size: cover;
+
+}
+ion-tab-bar {
+ --background: url('../../assets/images/bg.jpg') no-repeat center center fixed cover;
+ --background-size: cover;
+
+}
+
+ion-header{
+  --background: url('../../assets/images/bg.jpg') no-repeat center center fixed cover!important;
+  --background-size: cover;
+}
+ */
+
+ion-tab-bar, ion-tab-button{
+  background-color: transparent;
+ //--background: url('/assets/images/bg.jpg') no-repeat center center fixed cover!important;
+ --background-size: cover;
+
+}
+
+
+
+ion-icon{
+     color: #ffffff;
+   }
+ion-label{
+    color: #ffffff;
+  }
+  ion-header ion-toolbar:first-of-type {
+    padding-top: 0px;
+    border-bottom: none;
+}
+
+ion-tab-button {
+    --color-selected: #4E80FF!important;
+   &::before {
+  //  background-color:  red!important;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    width: 20px;
+    height: 2px;
+  }
+  .tab-selected::before {
+    background-color: #4E80FF;
+  }
+  .tab-selected:active {
+    background-color: #4E80FF;
+  }
+
+}
+
+
+.tab-selected{
+//  background: rgb(134,31,194) !important;
+ // color: red !important;
+  //--color-selected: red!important;
+  border-bottom: 2px solid white !important;
+}
+
+

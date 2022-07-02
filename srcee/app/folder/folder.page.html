@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.tabName' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ 'tab1.tabName' | translate }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong class="capitalize">{{ 'tab1.tabName' | translate }}</strong>
+    <p translate [translateParams]="{ lang: language }">tab1.invite</p> 
+  </div>
+
+  <ion-card>
+    <!--  other stuff -->
+    <ion-card-content>
+      <p translate [translateParams]="{ lang: language }">tab1.invite</p>
+      <ion-item> <!-- add this block -->
+        <ion-label translate>Language</ion-label>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' [placeholder]='"tab1.languageChangePlaceholder" | translate'>
+          <ion-select-option value='fr'>French</ion-select-option>
+          <ion-select-option value='en'>English</ion-select-option>
+        </ion-select>
+      </ion-item> <!-- add this block (end) -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

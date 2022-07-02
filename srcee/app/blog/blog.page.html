@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.astuce' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of principal">
+    <ion-card-header>
+      <ion-card-title>{{item.titre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{item.desc}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

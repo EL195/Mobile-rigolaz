@@ -1,0 +1,141 @@
+
+<!-- begin header menu definition -->
+<ion-menu side="start" type="reveal" menuId="mainMenu" class="main-menu">
+
+<!-- begin header -->
+<ion-header no-border>
+  <ion-toolbar color="primary" mode="ios">
+    <ion-title text-center >
+    <span *ngIf="connect==true" id="top-title" >{{ 'tab1.wel' | translate }} {{user.pseudo}}!</span>
+    <span *ngIf="connect==false" id="top-title" >{{ 'tab1.welcome' | translate }}</span>
+
+    </ion-title>
+    <!-- Menu left-->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+     <!-- Menu rigth-->
+   
+  </ion-toolbar>
+</ion-header>
+<!-- end header -->
+
+  <ion-content>
+    
+      <img *ngIf="connect==false" class="pro" src="/assets/logo.png" alt=""  />
+      <img *ngIf="connect==true" class="pro" [src]="user.photoURL" alt=""  />
+      <h1 *ngIf="connect==true" style="text-align: center;">{{user.pseudo}}</h1>
+      <h6 *ngIf="connect==true" style="text-align: center;">{{user.email}}</h6>
+    <br/>
+    <div class="pro" *ngIf="connect==false">
+        <ion-button tesxt-align="right" color="primary" (click)="login()" id="saveBtn">
+          {{ 'tab1.svp' | translate }} &nbsp;
+          </ion-button>
+    </div>
+   
+    <ion-list>
+
+        <ion-item menuClose > <ion-icon class="iconMenu" name="contact"></ion-icon></ion-item>
+       
+        <ion-item routerDirection="root" (click)="profileGo()" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="person-circle-outline"></ion-icon>
+          <ion-label>{{texting.compte}}</ion-label>
+        </ion-item>
+
+
+        <ion-item routerDirection="root" routerLink="/blog" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="newspaper-outline"></ion-icon>
+          <ion-label>{{texting.astuce}}</ion-label>
+        </ion-item>
+
+
+        <ion-item routerDirection="root" routerLink="/notifications" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="notifications-circle-outline"></ion-icon>
+          <ion-label>{{texting.notifications}}</ion-label>
+        </ion-item>
+
+        <ion-item routerDirection="root" (click)=" history()" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="time-outline"></ion-icon>
+          <ion-label>{{texting.history}}</ion-label>
+        </ion-item>
+
+        <ion-item routerDirection="root" routerLink="/works" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="calendar-number-outline"></ion-icon>
+          <ion-label>{{texting.works}}</ion-label>
+        </ion-item>
+
+        <ion-item routerDirection="root" routerLink="/settings" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="settings-outline"></ion-icon>
+          <ion-label>{{texting.settings}}</ion-label>
+        </ion-item>
+
+        <ion-item routerDirection="root" routerLink="/help" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon color="primary" slot="start" name="help-circle-outline"></ion-icon>
+          <ion-label>{{texting.help}}</ion-label>
+        </ion-item><br/><br/>
+
+
+       <ion-item *ngIf="connect==true" routerDirection="root" (click)="logOut()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="lock-closed-outline"></ion-icon>
+              <ion-label>{{texting.logout}}</ion-label>
+            </ion-item>
+
+</ion-list>
+</ion-content>
+</ion-menu>
+<!-- end header menu definition -->
+
+
+
+
+<!-- begin header -->
+<ion-header no-border>
+  <ion-toolbar color="primary" mode="ios">
+    <ion-title text-center >
+    <span *ngIf="connect==true" id="top-title" >{{ 'tab1.wel' | translate }} {{user.pseudo}}!</span>
+    <span *ngIf="connect==false" id="top-title" >{{ 'tab1.welcome' | translate }}</span>
+
+    </ion-title>
+    <!-- Menu left-->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+     <!-- Menu rigth-->
+   
+  </ion-toolbar>
+</ion-header>
+<!-- end header -->
+<br/><br/><br/><br/>
+  <ion-tabs main>
+    <ion-tab-bar style="margin-top: 45px;" slot="top">
+      <ion-tab-button tab="pay">
+        <ion-icon name="card-outline"></ion-icon>
+        <ion-label>{{ 'tab1.abonne' | translate }}</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="telecom">
+        <ion-icon name="ribbon-outline"></ion-icon>
+        <ion-label>{{ 'tab1.telecom' | translate }}</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="codes">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label>{{ 'tab1.codes' | translate }}</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

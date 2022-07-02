@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref="/tablinks/pay"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'tab1.works' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>{{ 'tab1.zone' | translate }}</ion-label>
+    <ion-select (ionChange)="onChange($event)" placeholder="Ville" name="zone">
+      <ion-select-option *ngFor="let item of principal" [value]="item.Ville">{{item.Ville}}</ion-select-option>
+    </ion-select>
+</ion-item>
+<div *ngIf="eventi==true">
+  <ion-card *ngFor="let items of commentData">
+    <ion-card-header>
+      <ion-card-title>{{items.libelle }}</ion-card-title>
+      <ion-card-subtitle color="primary">{{ items.quartier }} - {{ items.ville }}</ion-card-subtitle>
+      <ion-card-subtitle color="secondary" >{{ items.dating }} - {{ items.horaire }} </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</div>
+
+<div *ngIf="eventi==false">
+  <div id="headeri">
+    <h1>{{ 'tab1.seclecting' | translate }}</h1>
+   
+  </div>
+</div>
+
+
+
+
+</ion-content>
